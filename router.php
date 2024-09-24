@@ -19,6 +19,8 @@ class Router{
         array_shift($matches);
 
         list($class, $action) = explode("@", $controllerAction);
+        
+        echo $action;
         if(class_exists($class) && method_exists($class, $action)){
           return call_user_func_array([new $class, $action], array_slice($matches, 1));
       }
