@@ -5,8 +5,6 @@ class Router{
   private $routes =[];
   public function add($method, $path, $controllerAction){
     $this->routes[$method][$path] = $controllerAction;
-
-    print_r($this->routes);
   }
 
   public function dispatach(){
