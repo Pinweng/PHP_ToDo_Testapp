@@ -1,9 +1,9 @@
 <?php
 
-require_once("src\controllers\BaseController.php");
+require_once("src/controllers/BaseController.php");
 
-class Aboutcontroller extends BaseController{
+class AboutController extends BaseController{
   public function index(){
-    $this->view("about", ["msg" => "Hello from About", "name" => "Hans"]);
+    $this->view("about", ["msg" => "Hello from About", "name" => "Baris"]);
   }
 }
