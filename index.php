@@ -1,8 +1,8 @@
 <?php
 
 require_once("Router.php");
-require_once("src/controllers/Homecontroller.php");
-require_once("src/controllers/Aboutcontroller.php");
+require_once("src/controllers/HomeController.php");
+require_once("src/controllers/AboutController.php");
 
 $router = new Router();
 $router->add("GET", "/PHP_ToDo_Testapp/", "HomeController@index");
