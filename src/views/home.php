@@ -15,20 +15,27 @@
     ?>
   </h1>
 
-  <div class="card">
-    <div class="cardHead">
+  <div class='card'>
+    <div class='cardHead'>
       <h3>Todo Title</h3>
+      <small><b>Done</b></small>
     </div>
-    <div class="cardBody">
+    <div class='cardBody'>
       <p>Lorem ipsum dolor sit amet,
         consectetur adipisicing elit.
         Consequuntur saepe repudiandae non?
         Nostrum perferendis magnam excepturi
         hic perspiciatis. Quo, mollitia?</p>
     </div>
-    <div class="cardFooter">
-      <small>Erledigt</small>
-      <button></button>
+    <div class='cardFooter'>
+      
+      
+      <div class='button-grp'>
+      <button>Undone</button>
+      <button class='btn-done'>Done</button>
+      
+      </div>
+      
     </div>
   </div>
 </body>

@@ -6,4 +6,37 @@
 
 body {
   font-family: "Courier New", Courier, monospace;
+  color: rgb(74, 74, 74);
+}
+
+.card{
+  border: 1px solid rgb(74, 74, 74);
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: aliceblue;
+  border-radius: 0.652rem;
+  
+  .cardFooter{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .button-grp{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    button{
+      padding: 0.5rem;
+    }
+
+    .btn-done{
+      background-color: rgb(74, 74, 74);
+      color: white;
+      
+    }
+  }
 }
