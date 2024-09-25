@@ -1,6 +1,8 @@
 <?php
 
-  require_once("src/database/Database.php");
+namespace App\models;
+
+use App\database\Database;
 
   class BaseModel{
     protected $conn;
