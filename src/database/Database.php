@@ -1,6 +1,7 @@
 <?php
 
 namespace App\database;
+use PDO;
 
   class Database{
     private $host = "localhost";

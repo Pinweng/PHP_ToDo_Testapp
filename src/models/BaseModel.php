@@ -4,7 +4,7 @@ namespace App\models;
 
 use App\database\Database;
 
-  class BaseModel{
+  abstract class BaseModel{
     protected $conn;
 
     public function __construct(){
