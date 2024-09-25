@@ -1,8 +1,8 @@
 <?php
 
-class BaseController{
-  protected function view($viewName, $date = []){
+abstract class BaseController{
+  protected function view($viewName, $data = []){
     extract($data);
-    require_once "src/views/{$viewName}.php";
+    require "src/views/{$viewName}.php"; 
   }
 }
