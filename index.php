@@ -9,7 +9,7 @@ use App\controllers\HomeController;
 
   $router = new Router();
 
-  $router->add("GET", "/PHP_ToDo_Testapp/", "App\controllers\HomeController@index");
+  $router->add("GET", "/PHP_ToDo_Testapp/", "HomeController@index");
   
 
   $router->dispatch();
