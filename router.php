@@ -17,10 +17,7 @@ class Router{
     foreach ($this->routes[$method] ?? [] as $route => $controllerAction) {
       if(preg_match($this->formatRoute($route), $path, $matches)){
         array_shift($matches);
-
-      
-        
-        var_dump( list($class, $action) = explode("@", $controllerAction));
+        list($class, $action) = explode("@", $controllerAction);
         if(class_exists($class) && method_exists($class, $action)){
           return call_user_func_array([new $class, $action], array_slice($matches, 1));
       }
@@ -35,8 +32,6 @@ class Router{
 
   private function formatRoute($route){
     $route = preg_replace('/\{([^\/]+)\}/', '(?P<$1>[^/]+)', $route);
-    var_dump($route);
-    var_dump("#^$route$#");
     return "#^$route$#";
 }
 
