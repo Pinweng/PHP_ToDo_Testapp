@@ -13,6 +13,7 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
+  color: black;
 }
 
 .card-container{
@@ -26,7 +27,11 @@ h1{
   width: 250px;
   height: 200px;
   padding: 0.5rem;
-  background: rgba(98, 232, 250, 0.34);
+  background: radial-gradient(
+      ellipse at bottom,
+      rgb(44, 81, 121) 0%,
+      rgb(16, 48, 77) 45%
+    );
   border-radius: 8px;
   backdrop-filter: blur(5px);
   border-bottom: 3px solid rgba(255, 255, 255, 0.440);
@@ -35,7 +40,7 @@ h1{
   transform: skewX(10deg);
   transition: .2s;
   overflow: hidden;
-  color: rgb(74, 74, 74);
+  color: whitesmoke;
 }
 
 .card:hover {
@@ -69,7 +74,7 @@ h1{
     cursor: pointer;
     border: 1px solid #e8e8e8;
     transition: all 0.1s;
-    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    box-shadow: 2px 2px 8px #566cec, -2px -2px 8px #8797f7;
   }
   
   button:hover {
@@ -78,7 +83,7 @@ h1{
   
   
   button:active {
-    box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+    box-shadow: 2px 2px 8px #566cec, -2px -2px 8px #8797f7;
   }
   
   .btn-done{
@@ -123,67 +128,81 @@ h1{
 
 }
 
-.bookmarkBtn {
-  margin-top: 0.5em;
-  width: 60px;
-  height: 30px;
-  border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.349);
-  background-color: rgb(12, 12, 12);
+
+.addtodo{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition-duration: 0.3s;
-  overflow: hidden;
+  flex-direction: column;
+  width: 200px;
+
+  .button {
+    min-width: 60px;
+    
+    
+    position: relative;
+    
+    cursor: pointer;
+  
+    margin: 1em 0 1em 1em;
+    padding: 12px 17px;
+    border: 0;
+    border-radius: 7px;
+  
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    background: radial-gradient(
+      ellipse at bottom,
+      rgba(71, 81, 92, 1) 0%,
+      rgba(11, 21, 30, 1) 45%
+    );
+  
+    color: rgb(255, 255, 255, 0.66);
+  
+    transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+  }
+  
+  .button::before {
+    content: "";
+    width: 70%;
+    height: 1px;
+  
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+  
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.2;
+  
+    transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+  }
+  
+  .button:hover {
+    color: rgb(255, 255, 255, 1);
+    transform: scale(1.1) translateY(-3px);
+  }
+  
+  .button:hover::before {
+    opacity: 1;
+  }
 }
 
-.IconContainer {
-  width: 30px;
-  height: 30px;
-  background: linear-gradient(to bottom, rgb(255, 136, 255), rgb(172, 70, 255));
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  z-index: 2;
-  transition-duration: 0.3s;
+input {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
 }
 
-.icon {
-  border-radius: 1px;
+input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+              -13px -13px 100px #ffffff;
 }
-
-.text {
-  height: 100%;
-  width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  z-index: 1;
-  transition-duration: 0.3s;
-  font-size: 1.04em;
-}
-
-.bookmarkBtn:hover .IconContainer {
-  width: 90px;
-  transition-duration: 0.3s;
-}
-
-.bookmarkBtn:hover .text {
-  transform: translate(10px);
-  width: 0;
-  font-size: 0;
-  transition-duration: 0.3s;
-}
-
-.bookmarkBtn:active {
-  transform: scale(0.95);
-  transition-duration: 0.3s;
-}
-
-
-
-

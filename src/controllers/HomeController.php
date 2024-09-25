@@ -13,15 +13,14 @@ class HomeController extends BaseController{
 
     $cards = [];
 
-    foreach($todos as $todo){
-      
-      $CardObj = new TodoCard($todo["name"], $todo["status"], $todo["descr"] , $todo["id"]);
-      $card = $CardObj->createCard();
 
+    foreach ($todos as $todo) {
+      $CardObj = new TodoCard($todo["name"], $todo["status"], $todo["descr"], $todo["id"]);
+      $card = $CardObj->createCard();
       array_push($cards, $card);
     }
 
-
+  
     $this->view("home", ["message" => "Hello World", "cards" => $cards]);
   }
 
@@ -29,18 +28,23 @@ class HomeController extends BaseController{
 
   public function posttodo(){
     $todoModel = new TodoModel();
+
+    // Speicher das neue Todo ein
+    $todoModel->insertTodo($_POST["name"], $_POST["desc"]);
+    
     $todos = $todoModel->getTodos();
     $cards = [];
-
-    foreach($todos as $todo){
-      
-      $CardObj = new TodoCard($todo["name"], $todo["status"], $todo["descr"] , $todo["id"]);
+    foreach ($todos as $todo) {
+      $CardObj = new TodoCard($todo["name"], $todo["status"], $todo["descr"], $todo["id"]);
       $card = $CardObj->createCard();
-
       array_push($cards, $card);
     }
 
-
+  
     $this->view("home", ["message" => "Hello World", "cards" => $cards]);
   }
-} 
+
+
+
+
+}
