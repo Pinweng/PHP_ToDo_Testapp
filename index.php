@@ -1,11 +1,15 @@
 <?php
-  require_once("Router.php");
-  require_once("src/controllers/HomeController.php");
-  
+
+#https://www.php-fig.org/psr/psr-4/
+require_once("autoloader.php");
+
+use App\router\Router;
+use App\controllers\HomeController;
+
 
   $router = new Router();
 
-  $router->add("GET", "/PHP_ToDo_Testapp/", "HomeController@index");
+  $router->add("GET", "/PHP_ToDo_Testapp/", "App\controllers\HomeController@index");
   
 
   $router->dispatch();

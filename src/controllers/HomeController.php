@@ -1,7 +1,7 @@
 <?php
 
-require_once("src/controllers/BaseController.php");
-
+namespace App\controllers;
+use App\controllers\BaseController;
 
 class HomeController extends BaseController{
   public function index(){
