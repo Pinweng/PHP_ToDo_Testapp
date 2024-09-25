@@ -23,9 +23,9 @@ class TodoCard{
   // title, status, desc, id
 
   public function __construct(
-    private string $title, 
+    private string $name, 
     private string $status, 
-    private string $desc, 
+    private string $descr, 
     private int $id){
       $statusEnum = TaskStatus::from($this->status);
       $this->status = $statusEnum->getLabel();
@@ -38,11 +38,11 @@ class TodoCard{
     $card = <<<CARD
       <div class='card'>
         <div class='cardHead'>
-          <h3>$this->title</h3>
+          <h3>$this->name</h3>
           <small><b>$this->status</b></small>
         </div>
         <div class='cardBody'>
-          <p> $this->desc</p>
+          <p> $this->descr</p>
         </div>
         <div class='cardFooter'>
           <div class='button-grp'>
