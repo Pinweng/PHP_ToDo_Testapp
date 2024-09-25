@@ -85,6 +85,15 @@ h1{
     background-color: rgb(74, 74, 74);
     color: white;
     
+    &:hover{
+      background-color:  rgb(102, 102, 102);
+    }
+  }
+
+  .btn-undone{
+    &:hover{
+      background-color: #b6b6b6;
+    }
   }
 }
 
