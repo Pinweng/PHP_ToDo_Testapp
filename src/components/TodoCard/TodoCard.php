@@ -22,7 +22,10 @@ echo $status->getLabel();
 
 class TodoCard{
 
-  public function __construct(private string $title, private string $status, private string $descr, private int $id){}
+  public function __construct(private string $title, private string $status, private string $descr, private int $id){
+    $statusEnum = TaskStatus::from($this->status);
+    $this->status = $statusEnum->getLabel();
+  }
   
     
   

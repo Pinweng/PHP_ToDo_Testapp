@@ -9,6 +9,12 @@ body {
   color: black;
 }
 
+h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-container{
   display: flex;
   flex-wrap: wrap;
@@ -33,7 +39,7 @@ body {
 }
 
 .card:hover {
-  height: 315px;
+  height: 332px;
   transform: skew(0deg);
 }
 
@@ -106,12 +112,7 @@ body {
   box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.280);
 }
 
-.card h1 {
-  text-align: center;
-  margin: 1.3rem;
-  color: rgb(218, 244, 237);
-  text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.573);
-}
+
 
 }
 
