@@ -23,7 +23,7 @@
         Add Todo
       </button>
     </form>
-  </div>
+</div>
 
   <div class="card-container">
     <?php 

@@ -33,7 +33,4 @@ class TodoModel extends BaseModel{
         echo $e->getMessage();
     }
 }
-
-
-
 }
