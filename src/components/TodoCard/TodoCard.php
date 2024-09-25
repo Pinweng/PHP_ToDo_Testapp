@@ -1,20 +1,47 @@
 <?php
 
 namespace App\components\TodoCard;
+enum TaskStatus: int{
+  case Done = 1;
+  case Planned = 0;
+  case Pending = -1;
+
+  public function getLabel():string{
+    return match ($this){
+      self::Done => "Done",
+      self::Planned => "Planned",
+      self::Pending => "Pending"
+    };
+  }
+
+}
+
+$status = TaskStatus::from(-1);
+echo $status->getLabel();
+
 
 class TodoCard{
+
+  public function __construct(private string $title, private string $status, private string $descr, private int $id){}
+  
+    
+  
+
   public function createCard(){
-    return " <div class='card'>
+
+    $card = <<<CARD
+      <div class='card'>
+      <div class='align'>
+        <span class='red'></span>
+        <span class='yellow'></span>
+        <span class='green'></span>
+    </div>
     <div class='cardHead'>
-      <h3>Todo Title</h3>
-      <small><b>Done</b></small>
+      <h3>$this->title</h3>
+      <small><b>$this->status</b></small>
     </div>
     <div class='cardBody'>
-      <p>Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit.
-        Consequuntur saepe repudiandae non?
-        Nostrum perferendis magnam excepturi
-        hic perspiciatis. Quo, mollitia?</p>
+      <p>$this->descr</p>
     </div>
     <div class='cardFooter'>
       <div class='button-grp'>
@@ -22,6 +49,11 @@ class TodoCard{
       <button class='btn-done'>Done</button>
       </div> 
     </div>
-  </div>";
+  </div>
+CARD;
+
+
+
+    return $card;
   }
 }

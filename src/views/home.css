@@ -6,37 +6,114 @@
 
 body {
   font-family: "Courier New", Courier, monospace;
+  color: black;
+}
+
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  .card {
+  width: 250px;
+  height: 200px;
+  padding: 0.5rem;
+  background: rgba(98, 232, 250, 0.34);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.440);
+  border-left: 2px  rgba(255, 255, 255, 0.545) outset;
+  box-shadow: -40px 50px 30px rgba(0, 0, 0, 0.280);
+  transform: skewX(10deg);
+  transition: .2s;
+  overflow: hidden;
   color: rgb(74, 74, 74);
 }
 
-.card{
-  border: 1px solid rgb(74, 74, 74);
-  width: 12.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.card:hover {
+  height: 315px;
+  transform: skew(0deg);
+}
+
+.align {
   padding: 1rem;
-  background-color: aliceblue;
-  border-radius: 0.652rem;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-self: flex-start;
+  margin-bottom: 2em;
+}
+
+.button-grp{
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.1em;
   
-  .cardFooter{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+
+  button {
+    color: #090909;
+    padding: 0.2em 1em;
+    margin-top: 0.5em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.1s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   }
-
-  .button-grp{
-    display: flex;
-    justify-content: space-between;
-    gap: 0.5rem;
-    button{
-      padding: 0.5rem;
-    }
-
-    .btn-done{
-      background-color: rgb(74, 74, 74);
-      color: white;
-      
-    }
+  
+  button:hover {
+    border: 2px solid black;
+  }
+  
+  
+  button:active {
+    box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+  }
+  
+  .btn-done{
+    background-color: rgb(74, 74, 74);
+    color: white;
+    
   }
 }
+
+.red {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff605c;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.280);
+}
+
+.yellow {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffbd44;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.280);
+}
+
+.green {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #00ca4e;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.280);
+}
+
+.card h1 {
+  text-align: center;
+  margin: 1.3rem;
+  color: rgb(218, 244, 237);
+  text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.573);
+}
+
+}
+
+
+
