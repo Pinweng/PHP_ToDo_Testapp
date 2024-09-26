@@ -1,12 +1,15 @@
 <?php
 
 namespace App\controllers;
+
 use App\controllers\BaseController;
 use App\models\TodoModel;
 use App\components\TodoCard\TodoCard;
 
-class HomeController extends BaseController{
-  public function index(){
+class HomeController extends BaseController
+{
+  public function index()
+  {
     $todoModel = new TodoModel();
     $todos = $todoModel->getTodos();
 
@@ -20,23 +23,26 @@ class HomeController extends BaseController{
       array_push($cards, $card);
     }
 
-  
+
     $this->view("home", ["message" => "Hello World", "cards" => $cards]);
   }
 
 
-    public function posttodo(){
-      $todoModel = new TodoModel();
+  public function posttodo()
+  {
+    $todoModel = new TodoModel();
 
-      $todoModel->insertTodo($_POST["name"], $_POST["descr"]);
 
-      $todos = $todoModel->getTodos();
-      $cards = [];
-      foreach($todos as $todo){
-        $CardObj = new TodoCard($todo["name"], $todo["status"], $todo["descr"], $todo["id"]);
-        $card = $CardObj->createCard();
-        array_push($cards, $card);
-      }
-      $this->view("home", ["message" => "Hello World", "cards" => $cards]);
+
+    $todoModel->insertTodo($_POST["name"], $_POST["descr"]);
+
+    $todos = $todoModel->getTodos();
+    $cards = [];
+    foreach ($todos as $todo) {
+      $CardObj = new TodoCard($todo["name"], $todo["status"], $todo["descr"], $todo["id"]);
+      $card = $CardObj->createCard();
+      array_push($cards, $card);
     }
+    $this->view("home", ["message" => "Hello World", "cards" => $cards]);
+  }
 }
