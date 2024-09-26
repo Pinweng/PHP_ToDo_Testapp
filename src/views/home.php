@@ -24,7 +24,7 @@
         <input type="text" name="descr" id="descr" placeholder="What todo?" required>
       </div>
 
-      <button class="button">
+      <button class="button" name="create">
         Add Todo
       </button>
     </form>

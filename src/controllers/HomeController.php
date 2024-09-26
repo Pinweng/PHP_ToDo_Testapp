@@ -33,8 +33,17 @@ class HomeController extends BaseController
     $todoModel = new TodoModel();
 
 
+    if (array_key_exists("done", $_POST)) {
+      $todoModel->updateTodo(1, $_POST["done"]);
+    }
 
-    $todoModel->insertTodo($_POST["name"], $_POST["descr"]);
+    if (array_key_exists("pending", $_POST)) {
+      $todoModel->updateTodo(-1, $_POST["pending"]);
+    }
+
+    if (array_key_exists("create", $_POST)) {
+      $todoModel->insertTodo($_POST["name"], $_POST["descr"]);
+    }
 
     $todos = $todoModel->getTodos();
     $cards = [];

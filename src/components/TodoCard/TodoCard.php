@@ -54,8 +54,12 @@ class TodoCard
         </div>
         <div class='cardFooter'>
           <div class='button-grp'>
-            <button>Undone</button>
-            <button class='btn-done'>Done</button>
+            <form action = '' method = 'post' >
+              <button type = 'submit' name = 'pending' value ='$this->id'>Pending</button>
+            </form>
+            <form action = '' method = 'post'>
+            <button type = 'submit' name = 'done' class='btn-done' value ='$this->id'>Done</button>
+            </form>
           </div>
         </div>
       </div>
