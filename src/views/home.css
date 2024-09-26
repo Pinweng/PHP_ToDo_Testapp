@@ -16,6 +16,15 @@ h1{
   color: black;
 }
 
+.insert_todo{
+  margin: 1em 0 1em 1em;
+}
+
+.insert_descr{
+  margin-left: 1em;
+}
+
+
 .card-container{
   display: flex;
   flex-wrap: wrap;
@@ -142,7 +151,7 @@ h1{
     
     cursor: pointer;
   
-    margin: 1em 0 1em 1em;
+    margin: 1em 0 1em 4.5em;
     padding: 12px 17px;
     border: 0;
     border-radius: 7px;

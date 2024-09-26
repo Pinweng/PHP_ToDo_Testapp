@@ -14,24 +14,29 @@
     echo $message
     ?>
   </h1>
-  
-<div class="addtodo">
+
+  <div class="addtodo">
     <form action="" method="post">
-      <input type="text" name="name" id="name" placeholder="Todo Title" required>
-      <input type="text" name="descr" id="descr" placeholder="What todo?" required>
+      <div class="insert_todo">
+        <input type="text" name="name" id="name" placeholder="Todo Title" required>
+      </div>
+      <div class="insert_descr">
+        <input type="text" name="descr" id="descr" placeholder="What todo?" required>
+      </div>
+
       <button class="button">
         Add Todo
       </button>
     </form>
-</div>
+  </div>
 
   <div class="card-container">
-    <?php 
-    foreach ($cards as $card){
+    <?php
+    foreach ($cards as $card) {
       echo $card;
     }
     ?>
-  </div>  
+  </div>
 
 </body>
 
