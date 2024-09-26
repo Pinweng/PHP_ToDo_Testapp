@@ -51,4 +51,17 @@ class TodoModel extends BaseModel
       echo $e->getMessage();
     }
   }
+
+  public function deleteTodo($id)
+  {
+    $query = "DELETE FROM todos WHERE id = :id";
+
+    try {
+      $stmt = $this->conn->prepare($query);
+      $stmt->bindParam(':id', $id);
+      $stmt->execute();
+    } catch (Exception $e) {
+      echo $e->getMessage();
+    }
+  }
 }

@@ -45,6 +45,10 @@ class HomeController extends BaseController
       $todoModel->insertTodo($_POST["name"], $_POST["descr"]);
     }
 
+    if (array_key_exists("delete", $_POST)) {
+      $todoModel->deleteTodo($_POST["delete"]);
+    }
+
     $todos = $todoModel->getTodos();
     $cards = [];
     foreach ($todos as $todo) {

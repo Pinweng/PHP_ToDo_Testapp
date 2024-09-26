@@ -33,7 +33,7 @@ h1{
   gap: 1rem;
 
   .card {
-  width: 250px;
+  width: 260px;
   height: 200px;
   padding: 0.5rem;
   background: radial-gradient(
@@ -79,7 +79,6 @@ h1{
     margin-top: 0.5em;
     font-size: 18px;
     border-radius: 0.5em;
-    background: #e8e8e8;
     cursor: pointer;
     border: 1px solid #e8e8e8;
     transition: all 0.1s;
@@ -107,6 +106,7 @@ h1{
   .btn-undone{
     &:hover{
       background-color: #b6b6b6;
+      width: 20px;
     }
   }
 }
@@ -214,4 +214,60 @@ input:focus {
   transform: scale(1.05);
   box-shadow: 13px 13px 100px #969696,
               -13px -13px 100px #ffffff;
+}
+
+.bin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(141, 136, 136);
+  cursor: pointer;
+  border: 2px solid rgb(180, 172, 172);
+  transition-duration: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.bin-bottom {
+  width: 15px;
+  z-index: 2;
+}
+.bin-top {
+  width: 17px;
+  transform-origin: right;
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
+}
+.bin-button:hover {
+  background-color: rgb(245, 5, 5);
+}
+.bin-button:active {
+  transform: scale(0.9);
+}
+.garbage {
+  position: absolute;
+  width: 10px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.bin-button:hover .garbage {
+  animation: throw 0.4s linear;
+}
+@keyframes throw {
+  from {
+    transform: translate(-400%, -700%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
 }
