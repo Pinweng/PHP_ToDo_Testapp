@@ -9,9 +9,10 @@
 </head>
 
 <body>
-  <h1>My Todo-List</h1>
+
 
   <div class="addtodo">
+    <h1>My Todo-List</h1>
     <form action="" method="post">
       <div class="insert_todo">
         <input type="text" name="name" id="name" placeholder="Todo Title" required>
