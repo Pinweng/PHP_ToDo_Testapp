@@ -56,6 +56,6 @@ class HomeController extends BaseController
       $card = $CardObj->createCard();
       array_push($cards, $card);
     }
-    $this->view("home", ["message" => "Hello World", "cards" => $cards]);
+    $this->view("home", ["cards" => $cards]);
   }
 }
