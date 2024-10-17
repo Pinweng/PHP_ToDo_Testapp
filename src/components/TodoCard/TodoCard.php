@@ -8,6 +8,7 @@ enum TaskStatus: int
   case Done = 1;
   case Planned = 0;
   case Pending = -1;
+  
   public function getLabel(): string
   {
     return match ($this) {
